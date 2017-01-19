@@ -4,13 +4,14 @@ func main() {
 	mp := MessagePrinter{"foo", 5}
 	mp.PrintMessage()
 
-	emp := enhancedMessagePrinter{MessagePrinter{"bar", 10}}
+	emp := enhancedMessagePrinter{MessagePrinter{"bar", 10}, 999}
 	emp.PrintMessage()
 	emp.EnhancedPrintMessage()
 
 	emp2 := enhancedMessagePrinter{}
 	emp2.message = "buz"
 	emp2.number = 100
+	emp2.enhancednumber = 888
 	emp2.EnhancedPrintMessage()
 }
 
@@ -28,8 +29,9 @@ func (mpx *MessagePrinter) PrintMessage() {
 // enhancedMessagePrinter is a enhancement struct
 type enhancedMessagePrinter struct {
 	MessagePrinter
+	enhancednumber int
 }
 
 func (emp *enhancedMessagePrinter) EnhancedPrintMessage() {
-	println("Enhanced -", emp.message, emp.number)
+	println("Enhanced -", emp.message, emp.number, emp.enhancednumber)
 }
