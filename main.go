@@ -14,7 +14,7 @@ func main() {
 	emp2.enhancednumber = 888
 	emp2.EnhancedPrintMessage()
 
-	second()
+	//second()
 }
 
 // MessagePrinter class has 2 members
